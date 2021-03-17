@@ -179,12 +179,33 @@ nav h1 {
     background-color: #191929;
     color: rgb(240, 240, 240);
     border-radius: 6px;
+    position: relative;
+    overflow: hidden;
 }
 
-.card .btnDetail:hover{
+.card .btnDetail::before{
+    content: '';
+    position: absolute;
+    background-color: #cfcfcf;
+    padding: 50%;
+    border-radius: 50%;
+    left: calc(100% * var(--ripple-x));
+    top: calc(100% * var(--ripple-y));
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1);
+    transition: transform 1s, opacity 1s;
+}
+
+.card .btnDetail:active::before{
+    transition: 0;
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(0);
+}
+
+/* .card .btnDetail:hover{
     background-color: rgb(54, 54, 83);
     cursor: pointer;
-}
+} */
 
 .modal, .modalFollow{
     position: fixed;

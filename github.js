@@ -66,6 +66,16 @@ btnSearch.addEventListener('click', function () {
                 });
             });
 
+            // btnDetail Animasi Ripple
+            const root = document.documentElement;
+            document.addEventListener('mousedown', ev => {
+                const el = ev.target;
+                const x = (ev.clientX - el.offsetLeft) / el.offsetWidth;
+                const y = (ev.clientY - el.offsetTop) / el.offsetHeight;
+                root.style.setProperty("--ripple-x", x);
+                root.style.setProperty("--ripple-y", y);
+            })
+
             // Modal
             // const btnDetails = document.querySelectorAll('[data-modal-target]');
             const closeButton = document.querySelectorAll('[data-close-button]');
