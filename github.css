@@ -1,0 +1,399 @@
+body, html, h1 {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+nav{
+    padding: 10px;
+    background-color: #191929;
+    color: rgb(240, 240, 240);
+    position: sticky;
+    top: 0;
+    display: flex;
+}
+
+nav h1 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, 'Times New Roman', Times, serif;
+    text-shadow: 0 0 3px white;
+    letter-spacing: 1px;
+    align-self: center;
+    flex: 8;
+}
+
+.container{
+    margin-top: 30px;
+    text-align: center;
+}
+
+.sticky{
+    position: sticky;
+    top: 10px;
+    text-align: right;
+    margin-right: 50px;
+}
+
+
+.container .inputSearch{
+    width: 300px;
+    padding: 7px 10px;
+    font-size: 18px;
+    border-radius: 6px 0 0 6px;
+    box-sizing: border-box;
+}
+
+.container .inputSticky{
+    border: 0;
+    width: 250px;
+    padding: 6px 5px;
+    font-size: 14px;
+    border-radius: 6px 0 0 6px;
+    box-sizing: border-box;
+}
+
+.container .inputSearch:hover{
+    border: 1px solid #191929;
+    box-shadow: 0 0 5px #191929;
+}
+
+.container .btnSearch{
+    padding: 7px 10px;
+    font-size: 18px;
+    border-radius: 0 6px 6px 0;
+    background-color: #191929;
+    color: rgb(240, 240, 240);
+    font-weight: 600;
+}
+
+.container .btnSearch:hover{
+    background-color: rgb(54, 54, 83);
+}
+
+.container .btnSticky{
+    color: black;
+    background-color: rgb(240, 240, 240);
+    border: 0;
+    padding: 6px 5px;
+    font-size: 14px;
+    border-radius: 0 6px 6px 0;
+    box-sizing: border-box;
+}
+
+.container .btnSticky:hover{
+    background: none;
+    color: white;
+}
+
+.error{
+    text-align: center;
+    color: rgb(226, 100, 100);
+    font-size: 18px;
+}
+
+.listCard{
+    display: flex;
+    margin: 20px auto;
+    width: 70%;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card{
+    width: 30%;
+    background-color: rgb(255, 255, 255);
+    margin: 10px;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 3px 5px #191929;
+}
+
+.card .header{
+    margin: 10px auto;
+    height: 150px;
+    width: 150px;
+    background-color: rgb(58, 57, 57);
+    border-radius: 50%;
+}
+
+.card .header img{
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+}
+
+.modal .modal-body .imgDetail{
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    border: 1px solid #191929;
+    box-shadow: 0 0 2px #191929;
+}
+
+.card .content{
+    /* padding: 10px; */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.card .content .name{
+    font-weight: bold;
+    color: #474747;
+    text-align: center;
+    margin: 0;
+}
+
+.content .follow{
+    display: flex;
+    justify-content: space-around;
+    margin: 10px 0 15px;
+}
+
+.content .follow .followers{
+    background: none;
+    border: none;
+    color: #cfcfcf;
+    letter-spacing: 1px;
+}
+
+.content .follow .followers:hover{
+    color: #808080;
+    cursor: pointer;
+}
+
+.content .follow .following{
+    background: none;
+    border: none;
+    color: #cfcfcf;
+    letter-spacing: 1px;
+}
+
+.content .follow .following:hover{
+    color: #808080;
+    cursor: pointer;
+}
+
+.card .btnDetail{
+    border: 0;
+    padding: 8px 18px;
+    background-color: #191929;
+    color: rgb(240, 240, 240);
+    border-radius: 6px;
+}
+
+.card .btnDetail:hover{
+    background-color: rgb(54, 54, 83);
+    cursor: pointer;
+}
+
+.modal, .modalFollow{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) scale(0);
+    transition: 200ms ease-in-out;
+    background-color: white;
+    border: 1px solid #191929;
+    box-shadow: 0 0 8px #191929;
+    border-radius: 10px;
+    z-index: 10;
+    width: 500px;
+    max-width: 80%;
+}
+
+.modal.active, .modalFollow.active{
+    transform: translate(-50%,-50%) scale(1);
+}
+
+.modal .modal-header{
+    display: flex;
+    justify-content: space-between;
+}
+
+.modal .modal-header .title, .modalFollow .modal-headerF .title{
+    position: relative;
+    margin: auto;
+    padding: 5px 8px;
+    border: 0;
+    background-color: #191929;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 0 0 10px 10px;
+}
+
+.modal .modal-header .close-button, .modalFollow .modal-headerF .close-button{
+    margin: 5px 93%;
+    position: absolute;
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-size: 1.25rem;
+    font-weight: bold;
+    outline: none;
+}
+
+.modal .modal-body, .modalFollow .modal-bodyF{
+    padding: 10px 15px;
+}
+
+.modal-body img{
+    display: block;
+    margin: auto;
+}
+
+.modal-body .content{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.modal-body .content h3{
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.modal-body .content ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.modal-body .content .followDetail{
+    display: flex;
+    justify-content: space-around;
+    color: #808080;
+}
+
+
+.modal-body .content .linkGithub{
+    display: flex;
+    justify-content: center;
+    margin: 10px auto;
+}
+
+.linkGithub a{   
+    border-bottom: 1px solid #191929;
+    text-decoration: none;
+}
+
+.linkGithub a:hover{
+    cursor: pointer;
+    color: #808080;
+}
+
+
+/* for cardFollow */
+
+
+.modalFollow .modal-headerF{
+    display: flex;
+    justify-content: space-between;
+}
+
+.modal-bodyF{
+    height: 500px;
+    overflow: auto;
+}
+
+.modal-bodyF .cardFollow{
+    display: flex;
+    width: 80%;
+    background-color: rgb(243, 243, 243);
+    margin: 10px auto;
+    padding: 10px;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.modal-bodyF .cardFollow img{
+    align-self: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+
+#overlay{
+    position: fixed;
+    opacity: 0;
+    transition: 200ms ease-in-out;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .5);
+    pointer-events: none;
+}
+
+#overlay.active{
+    opacity: 1;
+    pointer-events: all;
+}
+
+
+
+/* Responsive */
+
+@media (max-width: 765px){
+    .sticky{
+        margin-right: 10px;
+    }
+
+    .container .inputSearch{
+        width: 250px;
+    }
+
+    .container .inputSticky{
+        width: 40%;
+    }
+
+    .listCard{
+        width: 80%;
+    }
+
+    .card{
+        width: 100%;
+        display: flex;
+    }
+
+    .card .header{
+        margin: 10px;
+        height: 80px;
+        width: 80px;
+        align-self: center;
+    }
+
+    .card .header img{
+        height: 80px;
+        width: 80px;
+    }
+
+    .modal .modal-body .imgDetail{
+        height: 120px;
+        width: 120px;
+    }
+
+    .card .content{
+        width: 60%;
+    }
+    
+    .card .content .name{
+        text-align: left;
+        margin-top: 25px;
+    }
+
+    .card .btnDetail{
+        float: right;
+    }
+
+    nav{
+        font-size: small;
+        padding: 10px 0px 10px 6px;
+    }
+
+    nav h1{
+        width: 30%;
+        flex: 3;
+    }
+
+}
