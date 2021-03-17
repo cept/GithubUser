@@ -24,12 +24,7 @@ btnSearch.addEventListener('click', function () {
     var myHeaders = new Headers();
     myHeaders.append("Authorization", "token 204da954682dd595b0359853268ea49bf06d3db6");
 
-    var requestOptions = {
-        method: 'GET',
-        headers: myHeaders,
-        redirect: 'follow'
-    };
-    fetch('https://api.github.com/search/users?q=' + inputKeyword.value, requestOptions)
+    fetch('https://api.github.com/search/users?q=' + inputKeyword.value, myHeaders)
         .then(response => response.json())
         .then(response => {
             const user = response.items;
@@ -56,7 +51,7 @@ btnSearch.addEventListener('click', function () {
             btnDetail.forEach(btn => {
                 btn.addEventListener('click', function () {
                     const login = this.dataset.login;
-                    fetch('https://api.github.com/users/' + login, requestOptions)
+                    fetch('https://api.github.com/users/' + login, myHeaders)
                         .then(response => response.json())
                         .then(result => {
                             const cardDetail = showUserDetail(result);
@@ -111,7 +106,7 @@ btnSearch.addEventListener('click', function () {
                     const follow = this.innerHTML.toLowerCase();
                     const titleF = document.querySelector('.modal-headerF .title');
                     titleF.innerHTML = `${follow} me`;
-                    fetch('https://api.github.com/users/' + login + '/' + follow, requestOptions)
+                    fetch('https://api.github.com/users/' + login + '/' + follow, myHeaders)
                         .then(response => response.json())
                         .then(result => {
                             let cardFollow = '';
