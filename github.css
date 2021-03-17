@@ -16,6 +16,7 @@ nav{
 nav h1 {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, 'Times New Roman', Times, serif;
     text-shadow: 0 0 3px white;
+    border: 0;
     letter-spacing: 1px;
     align-self: center;
     flex: 8;
