@@ -132,6 +132,22 @@ nav h1 {
     box-shadow: 0 0 2px #191929;
 }
 
+.modal .modal-body .imgDetail:hover{
+    opacity: 0.8;
+    cursor: pointer;
+    border: 1px solid lightcoral;
+}
+
+.modal .modal-body .fullSize{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 99;
+    margin: -38px -15px;
+    transition: 100ms ease-in-out;
+    background-color: white;
+}
+
 .card .content{
     /* padding: 10px; */
     text-align: center;

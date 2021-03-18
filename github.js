@@ -58,6 +58,13 @@ btnSearch.addEventListener('click', function () {
                             const modalBody = document.querySelector('.modal-body');
                             modalBody.innerHTML = cardDetail;
 
+                            const imgDetail = document.querySelector('.imgDetail')
+                            imgDetail.addEventListener('click', function () {
+                                this.classList.toggle('imgDetail');
+                                this.classList.toggle('fullSize')
+
+                            })
+
                         });
 
                     const modal = document.querySelector(btn.dataset.modalTarget)
