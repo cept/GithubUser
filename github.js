@@ -60,8 +60,10 @@ btnSearch.addEventListener('click', function () {
 
                             const imgDetail = document.querySelector('.imgDetail')
                             imgDetail.addEventListener('click', function () {
+                                const modal = document.querySelector('.modal');
+                                modal.classList.toggle('modalFull')
                                 this.classList.toggle('imgDetail');
-                                this.classList.toggle('fullSize')
+                                this.classList.toggle('fullSize');
 
                             })
 

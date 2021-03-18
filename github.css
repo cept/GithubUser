@@ -144,7 +144,7 @@ nav h1 {
     position: absolute;
     z-index: 99;
     margin: -38px -15px;
-    transition: 100ms ease-in-out;
+    transition: 200ms ease-in-out;
     background-color: white;
 }
 
@@ -238,6 +238,11 @@ nav h1 {
     z-index: 10;
     width: 500px;
     max-width: 80%;
+}
+
+.modalFull{
+    width: 460px;
+    height: 460px;
 }
 
 .modal.active, .modalFollow.active{
